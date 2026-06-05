@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    padding:50px;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:600px;
+    margin:auto;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#message{
+    display:none;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<button onclick="showMessage()">
+Open Message 🎁
+</button>
+
+<div id="message">
+<p>ڕۆژی لە دایک بوونت پیرۆز ❤️</p>
+
+<p>
+إن شاء الله تەمەنت پڕ بەرەکەت دەبێت،
+خودا بە دوورت بگرێت لە هەموو ناخۆشی و بەڵایەک،
+هەر سەرکەوتوو بی.
+</p>
+
+<p>
+هیوادارم ئەو تەمەنەی ماوتە
+لە ڕێگای خودا بە سەری ببەی.
+</p>
+
+<p>
+دووبارە ڕۆژی بوونت پیرۆز 🎉 ❤️ 🥰
+</p>
+</div>
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("message").style.display="block";
+}
+</script>
+
+</body>
+</html>
