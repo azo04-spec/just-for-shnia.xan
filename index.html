@@ -1,171 +1,234 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
 <title>Happy Birthday ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial;
 }
 
 body{
+
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
 
-/* Birthday GIF Background */
 background:
-url("https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif")
-center/cover no-repeat;
-}
+url("https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif")
+center/cover;
 
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.35);
-}
-
-.card{
-position:relative;
-z-index:2;
-width:90%;
-max-width:750px;
-
-padding:35px;
-
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(12px);
-
-border-radius:30px;
-
-text-align:center;
+overflow:hidden;
 
 color:white;
 
-box-shadow:
-0 0 40px rgba(255,255,255,.3);
+}
+
+.page{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+transition:1s;
+
+}
+
+.page1{
+
+background:
+rgba(0,0,0,.35);
+
+}
+
+.page2{
+
+background:
+rgba(0,0,0,.55);
+
+transform:
+translateX(100%);
+
+}
+
+.show{
+
+transform:
+translateX(0);
+
+}
+
+.hide{
+
+transform:
+translateX(-100%);
+
 }
 
 h1{
-font-size:42px;
-margin-bottom:20px;
+
+font-size:55px;
 
 text-shadow:
 0 0 20px pink;
+
 }
 
 .message{
-font-size:22px;
+
+max-width:800px;
+
+font-size:24px;
+
 line-height:2;
+
 }
 
 .btn{
+
 margin-top:35px;
 
-display:inline-block;
+padding:
+18px 45px;
 
-padding:18px 45px;
+border:none;
+
+border-radius:60px;
+
+font-size:22px;
+
+cursor:pointer;
 
 background:
 linear-gradient(
 45deg,
-#ff7eb3,
-#ff5fa2
+#ff84b7,
+#ff4d94
 );
 
 color:white;
 
-font-size:22px;
-
-text-decoration:none;
-
-border-radius:50px;
-
 box-shadow:
-0 0 30px pink;
+0 0 35px pink;
 
 animation:
-float 2.5s infinite ease-in-out;
+float 2.3s infinite;
 
-transition:.4s;
-}
-
-.btn:hover{
-transform:scale(1.08);
 }
 
 @keyframes float{
+
 0%{
-transform:translateY(0);
+transform:
+translateY(0);
 }
 
 50%{
-transform:translateY(-12px);
+transform:
+translateY(-12px);
 }
 
 100%{
-transform:translateY(0);
-}
-}
-
-@media(max-width:600px){
-
-h1{
-font-size:30px;
-}
-
-.message{
-font-size:18px;
+transform:
+translateY(0);
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<!-- PAGE 1 -->
 
-<div class="card">
+<div class="page page1" id="first">
 
 <h1>
-Happy BirthDay to you🎉❤️🤍
+Happy BirthDay to you 🎉❤️🤍
 </h1>
+
+<button
+class="btn"
+
+onclick="openMessage()">
+
+A message for you 🤍
+
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page page2" id="second">
 
 <div class="message">
 
-ڕۆژی لە دایکبوونت پیرۆز بێت🤍<br><br>
+ڕۆژی لە دایکبوونت پیرۆز بێت🤍
+<br><br>
 
-تەمەنت پر بەرەکەت بێت<br>
+تەمەنت پر بەرەکەت بێت
+<br>
 
-هەموو ڕۆژێکت هەر شادی وخۆشی بێت<br>
+هەموو ڕۆژێکت هەر شادی وخۆشی بێت
+<br>
 
-دووربی لە هەموو ناخۆشی ئ بەڵایەک<br>
+دووربی لە هەموو ناخۆشی ئ بەڵایەک
+<br>
 
-ئەو تەمەنەی ماوتە لە پێناو خودا بەسەری ببەی<br>
+ئەو تەمەنەی ماوتە لە پێناو خودا بەسەری ببەی
+<br>
 
-ئەوەی باشە و خێری تێدایە خودا بێنێتە ڕێگات<br><br>
+ئەوەی باشە و خێری تێدایە
+خودا بێنێتە ڕێگات
+<br><br>
 
 دوبارە ڕۆژی لە دایک بوونت پیرۆز بێت🎉❤️🥰
 
 </div>
 
-<a href="#" class="btn">
-A message for you 🤍
-</a>
-
 </div>
 
+<script>
+
+function openMessage(){
+
+document
+.getElementById("first")
+.classList
+.add("hide");
+
+document
+.getElementById("second")
+.classList
+.add("show");
+
+}
+
+</script>
+
 </body>
+
 </html>
 ```
