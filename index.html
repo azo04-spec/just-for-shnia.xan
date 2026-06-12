@@ -1,75 +1,171 @@
+```html
 <!DOCTYPE html>
-<html lang="ku">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
+<title>Happy Birthday ❤️</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    text-align:center;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    padding:50px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+/* Birthday GIF Background */
+background:
+url("https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif")
+center/cover no-repeat;
 }
 
-.container{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    max-width:600px;
-    margin:auto;
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.35);
 }
 
-button{
-    padding:12px 20px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:18px;
+.card{
+position:relative;
+z-index:2;
+width:90%;
+max-width:750px;
+
+padding:35px;
+
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+
+border-radius:30px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:
+0 0 40px rgba(255,255,255,.3);
 }
 
-#message{
-    display:none;
-    margin-top:20px;
+h1{
+font-size:42px;
+margin-bottom:20px;
+
+text-shadow:
+0 0 20px pink;
 }
+
+.message{
+font-size:22px;
+line-height:2;
+}
+
+.btn{
+margin-top:35px;
+
+display:inline-block;
+
+padding:18px 45px;
+
+background:
+linear-gradient(
+45deg,
+#ff7eb3,
+#ff5fa2
+);
+
+color:white;
+
+font-size:22px;
+
+text-decoration:none;
+
+border-radius:50px;
+
+box-shadow:
+0 0 30px pink;
+
+animation:
+float 2.5s infinite ease-in-out;
+
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:30px;
+}
+
+.message{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>🎂 Happy Birthday 🎂</h1>
+<div class="overlay"></div>
 
-<button onclick="showMessage()">
-Open Message 🎁
-</button>
+<div class="card">
 
-<div id="message">
-<p>ڕۆژی لە دایک بوونت پیرۆز ❤️</p>
+<h1>
+Happy BirthDay to you🎉❤️🤍
+</h1>
 
-<p>
-إن شاء الله تەمەنت پڕ بەرەکەت دەبێت،
-خودا بە دوورت بگرێت لە هەموو ناخۆشی و بەڵایەک،
-هەر سەرکەوتوو بی.
-</p>
+<div class="message">
 
-<p>
-هیوادارم ئەو تەمەنەی ماوتە
-لە ڕێگای خودا بە سەری ببەی.
-</p>
+ڕۆژی لە دایکبوونت پیرۆز بێت🤍<br><br>
 
-<p>
-دووبارە ڕۆژی بوونت پیرۆز 🎉 ❤️ 🥰
-</p>
+تەمەنت پر بەرەکەت بێت<br>
+
+هەموو ڕۆژێکت هەر شادی وخۆشی بێت<br>
+
+دووربی لە هەموو ناخۆشی ئ بەڵایەک<br>
+
+ئەو تەمەنەی ماوتە لە پێناو خودا بەسەری ببەی<br>
+
+ئەوەی باشە و خێری تێدایە خودا بێنێتە ڕێگات<br><br>
+
+دوبارە ڕۆژی لە دایک بوونت پیرۆز بێت🎉❤️🥰
+
 </div>
-</div>
 
-<script>
-function showMessage(){
-    document.getElementById("message").style.display="block";
-}
-</script>
+<a href="#" class="btn">
+A message for you 🤍
+</a>
+
+</div>
 
 </body>
 </html>
+```
